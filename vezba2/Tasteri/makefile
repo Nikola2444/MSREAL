@@ -1,9 +1,8 @@
 sources=$(wildcard *.c)
 objs=$(sources:.c=.o)
 
-all: calculate
-
-calculate: $(objs)
+all: tasteri 
+tasteri: $(objs)
 	@echo "Building output binary.."
 	$(CC) -o $@ $(objs)
 %.o: %.c
@@ -14,10 +13,10 @@ calculate: $(objs)
 	@echo $@
 	@set -e; rm -f $@; \
 	$(CC) -MM $(CPPFLAGS) $< > $@.$$$$; \
-	sed 's,\($*\)\.o[ :]*,\1.o $@:,g'< $@.$$$$ > $@; 
-	#rm -f $@.$$$$
+	sed 's,    \($*\)\.o[ :]*     ,    \1.o $@ :   ,   g' < $@.$$$$ > $@; \
+	rm -f $@.$$$$
 clean:
-	@rm -f calculated *.o *.d* *.gch *~
+	@rm -f tasteri *.o *.d*
 	@echo "Clean done.."
 
 -include $(sources:.c=.d)
