@@ -1,1 +1,0 @@
-cmd_/root/git_repos/MSREAL/vezba5/storage_driver/Storage.ko := ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /root/git_repos/MSREAL/vezba5/storage_driver/Storage.ko /root/git_repos/MSREAL/vezba5/storage_driver/Storage.o /root/git_repos/MSREAL/vezba5/storage_driver/Storage.mod.o ;  true
