@@ -10,10 +10,10 @@ MODULE_LICENSE("Dual BSD/GPL");
 
 
 //function prototypes
-int hello_open(struct inode *pinode, struct file *pfile);
-int hello_close(struct inode *pinode, struct file *pfile);
-ssize_t hello_read(struct file *pfile, char __user *buffer, size_t length, loff_t *offset);
-static ssize_t hello_write(struct file *pfile, const char __user *buffer, size_t length, loff_t *offset);
+int storage_open(struct inode *pinode, struct file *pfile);
+int storage_close(struct inode *pinode, struct file *pfile);
+ssize_t storage_read(struct file *pfile, char __user *buffer, size_t length, loff_t *offset);
+static ssize_t storage_write(struct file *pfile, const char __user *buffer, size_t length, loff_t *offset);
 
 //***************************************************************
 static unsigned long strToInt(const char* pStr, int len, int base);
@@ -31,26 +31,26 @@ int pos = 0;
 struct file_operations my_fops =
   {
     .owner = THIS_MODULE,
-    .open = hello_open,
-    .read = hello_read,
-    .write = hello_write,
-    .release = hello_close,
+    .open = storage_open,
+    .read = storage_read,
+    .write = storage_write,
+    .release = storage_close,
   };
 //***********************************************************
 
-int hello_open(struct inode *pinode, struct file *pfile) 
+int storage_open(struct inode *pinode, struct file *pfile) 
 {
   printk(KERN_INFO "Succesfully opened file\n");
   return 0;
 }
 
-int hello_close(struct inode *pinode, struct file *pfile) 
+int storage_close(struct inode *pinode, struct file *pfile) 
 {
   printk(KERN_INFO "Succesfully closed file\n");
   return 0;
 }
 
-ssize_t hello_read(struct file *pfile, char __user *buffer, size_t length, loff_t *offset) 
+ssize_t storage_read(struct file *pfile, char __user *buffer, size_t length, loff_t *offset) 
 {
 
   char temp_array[100];
@@ -72,7 +72,7 @@ ssize_t hello_read(struct file *pfile, char __user *buffer, size_t length, loff_
   return len;
 }
 
-static ssize_t hello_write(struct file *pfile,const  char __user *buffer, size_t length, loff_t *offset) 
+static ssize_t storage_write(struct file *pfile,const  char __user *buffer, size_t length, loff_t *offset) 
 {
 
   char *temp_pt;
@@ -169,7 +169,7 @@ static int intToStr(int val, char* pBuf, int bufLen, int base)
 
   return len;
 }
-static int __init hello_init(void)
+static int __init storage_init(void)
 {
   int ret = 0;
   int i;
@@ -191,7 +191,7 @@ static int __init hello_init(void)
       return ret;
     }
 
-  printk(KERN_INFO "Hello, world\n");
+  printk(KERN_INFO "Storage, world\n");
   for (i=0; i<10; i++) {
     niz[i] = 0;
   }
@@ -199,13 +199,14 @@ static int __init hello_init(void)
   return 0;
 }
 
-static void __exit hello_exit(void)
+static void __exit storage_exit(void)
 {
-  unregister_chrdev_region(dev_id,1);
   cdev_del(my_cdev);
+  unregister_chrdev_region(dev_id,1);
+  
 
   printk(KERN_INFO "Goodbye, cruel world\n");
 }
 
-module_init(hello_init);
-module_exit(hello_exit);
+module_init(storage_init);
+module_exit(storage_exit);
