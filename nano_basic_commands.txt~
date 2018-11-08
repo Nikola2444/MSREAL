@@ -1,0 +1,33 @@
+POKRETANJE NANO EDITORA IZ KONZOLE
+nano -u <ime fajla>
+primer:
+	nano -u led_blink.c
+Komanda -u omogucava undo u nano editoru
+
+NANO EDITOR OSNOVNE KOMANDE
+
+-sacuvaj promene: 				ctrl+o (drzi ctrl i pritisni o), nakon toga pritisni enter da potvrdis ili ctrl+c ca odustanes od sacuvavanja
+-izadji iz nano editora: 			ctrl+x
+-iseci liniju koda:				ctrl+k
+-nalepi isecenu liniju koda:			ctrl+u
+-obelezavanje teksta (highlight text):		alt+a + strelice (prekid obelezavanja teksta je ista komanda)
+-kopiranje:					neophodno je obeleziti tekst koji se zeli kopirati, a onda se pritisne alt+6
+-pretrazivanje teksta za odredjenim stringom:	ctrl+w
+-pretrazivanje teksta za istim stringom:	alt+w
+-prekidanje trenutne komande:			ctrl+c
+-idi na pocetak linije:				ctrl+a
+-idi na kraj linije:				ctrl+e
+-undo:						alt+u (ovo radi samo ako je fajl otvoren sa: nano -u <ime_fajla>)
+-pomeranje gore:				strelica gore (ili ctrl+p)
+-pomeranje dole:				strelica dole (ili ctrl+n)
+-pomeranje desno:				strelica desno (ili ctrl+f)
+-pomeranje levo:				strelica levo (ili ctrl+b)
+
+VAZNO !!!!
+U slucaju da pretrazujete google kako biste saznali nano komande obratite paznju na sledece:
+
+ctrl se oznacava sa ^ (odnosno ctrl+o je ekvivalento sa ^+0)
+alt se oznacava sa M  (odnosno alw+w je ekvivalento sa M+w)
+
+
+ 
