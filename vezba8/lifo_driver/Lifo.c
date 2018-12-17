@@ -6,22 +6,24 @@
 #include <linux/kdev_t.h>
 #include <linux/cdev.h>
 #include <linux/uaccess.h>
+#include <linux/wait.h>
+#include <asm/atomic.h>
 MODULE_LICENSE("Dual BSD/GPL");
 
 
-//function prototypes
+//*****************FUNCTION PROTOTYPES***********************
 int lifo_open(struct inode *pinode, struct file *pfile);
 int lifo_close(struct inode *pinode, struct file *pfile);
 ssize_t lifo_read(struct file *pfile, char __user *buffer, size_t length, loff_t *offset);
 static ssize_t lifo_write(struct file *pfile, const char __user *buffer, size_t length, loff_t *offset);
 
-//***************************************************************
+//***********************************************************
 static unsigned long strToInt(const char* pStr, int len, int base);
 static char chToUpper(char ch);
 static int intToStr(int val, char* pBuf, int bufLen, int base);
-static int checkPosition(int position);
-//****************************************************************
+//***********************************************************
 
+//*****************BLOCKING STRUCTURES***********************
 
 //*****************GLOBAL VARIABLES**************************
 int pos = 0;
@@ -31,7 +33,6 @@ int lifo_num = 0;
 int endRead = 0;
 dev_t dev_id;
 int hex_or_dec = 10;
-
 struct cdev *my_cdev;
 int lifo[16];
 struct file_operations my_fops =
@@ -58,22 +59,24 @@ int lifo_close(struct inode *pinode, struct file *pfile)
 
 ssize_t lifo_read(struct file *pfile, char __user *buffer, size_t length, loff_t *offset) 
 {
-
+  
   char temp_array[100];
   int len;
   int i = 0;
+  pfile -> f_flags = 0;
   if (endRead) {
     endRead = 0;
     cat_iterations = 0;
     printk(KERN_INFO "Succesfully read from file\n");
     return 0;
   }
-  if (checkPosition(pos) == -1) {
-    printk("buffer is empty");
+  if(pos == 0) {
+    printk("buffer is empty \n");   
     return 0;
-  } 
-  len = intToStr(lifo[--pos], temp_array, 100, hex_or_dec);
-  cat_iterations ++;
+  }
+    
+  len = intToStr(lifo[--pos], temp_array, 100, hex_or_dec); 
+  cat_iterations ++;     
   if(cat_iterations != amount_to_print && pos != 0) {
     temp_array[len] = ',';
     len++;
@@ -123,32 +126,21 @@ static ssize_t lifo_write(struct file *pfile,const  char __user *buffer, size_t 
   }
   for (i = 0; i < (num_of_commas + 1); i++) {
     forward_ptr = strchr(back_ptr, ',');
-    if (forward_ptr != NULL) {
+    if (forward_ptr != NULL) {      
       *forward_ptr = '\0';
       forward_ptr++;
-      buff_len = strlen(back_ptr);
-      if (checkPosition(pos) == 0)
-      {
-        printk("lifo buffer is full");
-        return length;
-      }
-      lifo[pos] = strToInt(back_ptr, buff_len, hex_or_dec);
-      printk ("num %d is %d", pos, lifo[pos]);
-      pos++;
-
-      back_ptr = forward_ptr;
     }
-    else {
-      buff_len = strlen(back_ptr);
-      if (checkPosition(pos) == 0)
-      {
-        printk("lifo buffer is full");
+    
+    buff_len = strlen(back_ptr);
+    if (pos == 15) {
+        printk("lifo buffer is full \n");
         return length;
-      }
-      lifo[pos] = strToInt(back_ptr, buff_len, hex_or_dec);
-      pos++;
-      break;
     }
+    lifo[pos] = strToInt(back_ptr, buff_len, hex_or_dec);
+    printk ("num %d is %d", pos, lifo[pos]);
+    pos++;
+    back_ptr = forward_ptr;    
+    
       
     
   }
@@ -227,22 +219,12 @@ static int intToStr(int val, char* pBuf, int bufLen, int base)
   return len;
 }
 
-int checkPosition(int position)
-{
-  if(position == 15) {
-    return 0;
-  }
-  if (position == 0)
-    return -1;
 
-  return 1;
-  
- }
 static int __init lifo_init(void)
 {
   int ret = 0;
   int i;
-  ret = alloc_chrdev_region(&dev_id,0,1,"Lifo");
+  ret = alloc_chrdev_region(&dev_id,0,1,"Lifo_sa_blokiranjem");
   if(ret)
     {
       printk(KERN_ERR "failed to register char device\n");
