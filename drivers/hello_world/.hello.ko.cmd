@@ -1,0 +1,1 @@
+cmd_/root/drivers/hello_world/hello.ko := ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /root/drivers/hello_world/hello.ko /root/drivers/hello_world/hello.o /root/drivers/hello_world/hello.mod.o ;  true

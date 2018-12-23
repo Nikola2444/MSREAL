@@ -1,0 +1,1 @@
+cmd_/root/drivers/timer_driver/timer_driver.ko := ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /root/drivers/timer_driver/timer_driver.ko /root/drivers/timer_driver/timer_driver.o /root/drivers/timer_driver/timer_driver.mod.o ;  true
