@@ -1,0 +1,81 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Dec 27 19:24:32 2018
+# Process ID: 23406
+# Current directory: /home/nikola/Documents/git_folders/MSREAL/vezba10/VGA_sources
+# Command line: vivado
+# Log file: /home/nikola/Documents/git_folders/MSREAL/vezba10/VGA_sources/vivado.log
+# Journal file: /home/nikola/Documents/git_folders/MSREAL/vezba10/VGA_sources/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project VGA_ip /home/nikola/Documents/Vivado_projects/VGA_ip -part xc7z010clg400-1
+set_property board_part digilentinc.com:zybo-z7-10:part0:1.0 [current_project]
+add_files -norecurse /home/nikola/Documents/git_folders/MSREAL/vezba10/VGA_sources/VGA.sv
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -norecurse /home/nikola/Documents/git_folders/MSREAL/vezba10/VGA_sources/VGA_tb.sv
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+source VGA_tb.tcl
+run 10 us
+run 10 us
+relaunch_sim
+restart
+run 10 us
+run 1 ms
+relaunch_sim
+run 1 ms
+run 100 ms
+run 100 ms
+relaunch_sim
+run 100 ms
+restart
+run 100 ms
+relaunch_sim
+run 100 ms
+relaunch_sim
+run 100 ms
+relaunch_sim
+run 100 ms
+relaunch_sim
+run 100 ms
+relaunch_sim
+run 100 ms
+run 100 ms
+run 100 ms
+relaunch_sim
+run 100 ms
+run 100 ms
+relaunch_sim
+run 100 ms
+run 100 ms
+relaunch_sim
+run 100 ms
+run 100 ms
+restart
+relaunch_sim
+run 100 ms
+run 100 ms
+relaunch_sim
+run 100 ms
+run 100 ms
+relaunch_sim
+run 100 ms
+run 100 ms
+save_wave_config {/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_sim.wcfg}
+close_sim
+file mkdir /home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/constrs_1
+file mkdir /home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/constrs_1/new
+close [ open /home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/constrs_1/new/Constraints.xdc w ]
+add_files -fileset constrs_1 /home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/constrs_1/new/Constraints.xdc
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+refresh_design

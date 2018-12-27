@@ -1,0 +1,662 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Dec 27 19:24:32 2018
+# Process ID: 23406
+# Current directory: /home/nikola/Documents/git_folders/MSREAL/vezba10/VGA_sources
+# Command line: vivado
+# Log file: /home/nikola/Documents/git_folders/MSREAL/vezba10/VGA_sources/vivado.log
+# Journal file: /home/nikola/Documents/git_folders/MSREAL/vezba10/VGA_sources/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project VGA_ip /home/nikola/Documents/Vivado_projects/VGA_ip -part xc7z010clg400-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2018.3/data/ip'.
+create_project: Time (s): cpu = 00:00:24 ; elapsed = 00:00:17 . Memory (MB): peak = 6375.480 ; gain = 71.023 ; free physical = 125 ; free virtual = 6897
+set_property board_part digilentinc.com:zybo-z7-10:part0:1.0 [current_project]
+add_files -norecurse /home/nikola/Documents/git_folders/MSREAL/vezba10/VGA_sources/VGA.sv
+import_files -force -norecurse
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -norecurse /home/nikola/Documents/git_folders/MSREAL/vezba10/VGA_sources/VGA_tb.sv
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sources_1/imports/VGA_sources/VGA.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sim_1/imports/VGA_sources/VGA_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA
+Compiling module xil_defaultlib.VGA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot VGA_tb_behav
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source /home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/xsim.dir/VGA_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/xsim.dir/VGA_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Dec 27 19:32:49 2018. For additional details about this file, please refer to the WebTalk help file at /tools/Xilinx/Vivado/2018.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Dec 27 19:32:49 2018...
+run_program: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 6602.191 ; gain = 0.000 ; free physical = 331 ; free virtual = 6937
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "VGA_tb_behav -key {Behavioral:sim_1:Functional:VGA_tb} -tclbatch {VGA_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source VGA_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 6671.047 ; gain = 59.840 ; free physical = 304 ; free virtual = 6920
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'VGA_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:23 ; elapsed = 00:00:19 . Memory (MB): peak = 6671.047 ; gain = 68.855 ; free physical = 304 ; free virtual = 6920
+run 10 us
+run 10 us
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 6679.059 ; gain = 0.000 ; free physical = 381 ; free virtual = 6942
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sources_1/imports/VGA_sources/VGA.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sim_1/imports/VGA_sources/VGA_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA
+Compiling module xil_defaultlib.VGA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot VGA_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 6679.059 ; gain = 0.000 ; free physical = 375 ; free virtual = 6935
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+run 1 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sources_1/imports/VGA_sources/VGA.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sim_1/imports/VGA_sources/VGA_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA
+Compiling module xil_defaultlib.VGA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot VGA_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 6685.055 ; gain = 0.000 ; free physical = 366 ; free virtual = 6921
+run 1 ms
+run 100 ms
+run 100 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sources_1/imports/VGA_sources/VGA.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sim_1/imports/VGA_sources/VGA_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA
+Compiling module xil_defaultlib.VGA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot VGA_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 6703.055 ; gain = 9.996 ; free physical = 340 ; free virtual = 6891
+run 100 ms
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 100 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sources_1/imports/VGA_sources/VGA.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sim_1/imports/VGA_sources/VGA_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA
+Compiling module xil_defaultlib.VGA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot VGA_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 6735.070 ; gain = 7.996 ; free physical = 314 ; free virtual = 6866
+run 100 ms
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 6735.070 ; gain = 0.000 ; free physical = 233 ; free virtual = 6851
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 6735.070 ; gain = 0.000 ; free physical = 313 ; free virtual = 6865
+run 100 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sources_1/imports/VGA_sources/VGA.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sim_1/imports/VGA_sources/VGA_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA
+Compiling module xil_defaultlib.VGA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot VGA_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 6751.078 ; gain = 8.000 ; free physical = 303 ; free virtual = 6857
+run 100 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sources_1/imports/VGA_sources/VGA.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sim_1/imports/VGA_sources/VGA_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA
+Compiling module xil_defaultlib.VGA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot VGA_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 6831.117 ; gain = 2.992 ; free physical = 359 ; free virtual = 6912
+run 100 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sources_1/imports/VGA_sources/VGA.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sim_1/imports/VGA_sources/VGA_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA
+Compiling module xil_defaultlib.VGA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot VGA_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 6863.133 ; gain = 8.000 ; free physical = 429 ; free virtual = 6910
+run 100 ms
+run 100 ms
+run 100 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sources_1/imports/VGA_sources/VGA.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sim_1/imports/VGA_sources/VGA_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA
+Compiling module xil_defaultlib.VGA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot VGA_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 6911.156 ; gain = 8.000 ; free physical = 439 ; free virtual = 6919
+run 100 ms
+run 100 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sources_1/imports/VGA_sources/VGA.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sim_1/imports/VGA_sources/VGA_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA
+Compiling module xil_defaultlib.VGA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot VGA_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 6927.164 ; gain = 7.996 ; free physical = 378 ; free virtual = 6893
+run 100 ms
+run 100 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sources_1/imports/VGA_sources/VGA.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sim_1/imports/VGA_sources/VGA_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA
+Compiling module xil_defaultlib.VGA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot VGA_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 6975.188 ; gain = 2.996 ; free physical = 389 ; free virtual = 6869
+run 100 ms
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 6975.188 ; gain = 0.000 ; free physical = 315 ; free virtual = 6861
+run 100 ms
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sources_1/imports/VGA_sources/VGA.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sim_1/imports/VGA_sources/VGA_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA
+Compiling module xil_defaultlib.VGA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot VGA_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 6991.195 ; gain = 8.000 ; free physical = 357 ; free virtual = 6838
+run 100 ms
+run 100 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sources_1/imports/VGA_sources/VGA.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sim_1/imports/VGA_sources/VGA_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA
+Compiling module xil_defaultlib.VGA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot VGA_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 7007.203 ; gain = 8.000 ; free physical = 347 ; free virtual = 6816
+run 100 ms
+run 100 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'VGA_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj VGA_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sources_1/imports/VGA_sources/VGA.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/sim_1/imports/VGA_sources/VGA_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 38293b42abd74030a5e263185802e6ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot VGA_tb_behav xil_defaultlib.VGA_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA
+Compiling module xil_defaultlib.VGA_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot VGA_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 7023.211 ; gain = 8.000 ; free physical = 341 ; free virtual = 6810
+run 100 ms
+run 100 ms
+save_wave_config {/home/nikola/Documents/Vivado_projects/VGA_ip/VGA_sim.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+file mkdir /home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/constrs_1
+file mkdir /home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/constrs_1/new
+close [ open /home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/constrs_1/new/Constraints.xdc w ]
+add_files -fileset constrs_1 /home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.srcs/constrs_1/new/Constraints.xdc
+launch_runs impl_1 -jobs 4
+[Thu Dec 27 21:29:24 2018] Launched synth_1...
+Run output will be captured here: /home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.runs/synth_1/runme.log
+[Thu Dec 27 21:29:24 2018] Launched impl_1...
+Run output will be captured here: /home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 7798.746 ; gain = 0.000 ; free physical = 538 ; free virtual = 6141
+Restored from archive | CPU: 0.060000 secs | Memory: 0.145866 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 7798.746 ; gain = 0.000 ; free physical = 538 ; free virtual = 6141
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 7798.746 ; gain = 0.000 ; free physical = 538 ; free virtual = 6142
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:40 ; elapsed = 00:00:32 . Memory (MB): peak = 7965.602 ; gain = 851.141 ; free physical = 588 ; free virtual = 6198
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+[Thu Dec 27 21:36:15 2018] Launched synth_1...
+Run output will be captured here: /home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.runs/synth_1/runme.log
+[Thu Dec 27 21:36:15 2018] Launched impl_1...
+Run output will be captured here: /home/nikola/Documents/Vivado_projects/VGA_ip/VGA_ip.runs/impl_1/runme.log
+refresh_design
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 7965.602 ; gain = 0.000 ; free physical = 1217 ; free virtual = 6160
+Restored from archive | CPU: 0.050000 secs | Memory: 0.143387 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 7965.602 ; gain = 0.000 ; free physical = 1217 ; free virtual = 6160
+refresh_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:16 . Memory (MB): peak = 7978.617 ; gain = 13.016 ; free physical = 1202 ; free virtual = 6145
